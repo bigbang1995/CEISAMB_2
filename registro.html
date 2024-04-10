@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/registro.css"/>
+		<link rel="stylesheet" href="css/nomalice.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,900&display=swap" rel="stylesheet">
+        <title>CEISAMB/Registro</title>
+        <link rel="icon" href="images/icon.ico">
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    </head>
+
+    <body>
+        <header class="header">
+            <img class="logo" src="images/logo.png" alt="Logo">
+            <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+            <nav class="nav" id="nav">
+                <button class="cerrar-menu" id="cerrar"><i class="bi bi-list"></i></button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="cursos.html">Cursos</a></li>
+                    <li><a href="nuestros_servicios.html">Servicios</a></li>
+                    <li><a href="recursos.html">Recursos</a></li>
+                    <li><a href="iniciar_sesion.html">Aula Virtual</a></li>
+                </ul>
+            </nav>
+            <script src="./js/main.js"></script>
+        </header>
+
+            <section class="contact-form">
+                <img src="images/Imagen_10.jpg" alt="Imagen" class="contact-image">
+                <div class="form-container">
+                    <h2>Formulario de Contacto</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="fullname">Nombres y Apellidos:</label>
+                            <input type="text" id="fullname" name="fullname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Celular:</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Asunto:</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje:</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </section>
+        
+            <script>
+                // Espera a que el documento esté completamente cargado
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Encuentra el formulario
+                    var form = document.getElementById('contactForm');
+        
+                    // Agrega un evento de escucha para cuando el formulario se envíe
+                    form.addEventListener('submit', function (event) {
+                        // Evita el comportamiento predeterminado de enviar el formulario
+                        event.preventDefault();
+                        
+                        // Captura los datos del formulario
+                        var fullName = document.getElementById('fullname').value;
+                        var email = document.getElementById('email').value;
+                        var phone = document.getElementById('phone').value;
+                        var subject = document.getElementById('subject').value;
+                        var message = document.getElementById('message').value;
+                        
+                        // Construye el cuerpo del correo electrónico
+                        var mailtoLink = 'mailto:serviciosceisamb@gmail.com' +
+                                         '?subject=' + encodeURIComponent(subject) +
+                                         '&body=' + encodeURIComponent('Nombre completo: ' + fullName + '\n' +
+                                                                       'Correo electrónico: ' + email + '\n' +
+                                                                       'Celular: ' + phone + '\n' +
+                                                                       'Mensaje: ' + message);
+                        
+                        // Abre el cliente de correo electrónico del usuario con los datos del formulario
+                        window.location.href = mailtoLink;
+                    });
+                });
+            </script>
+              
+            
+               
+            
+            
+            
+                <section class="ele">
+                    <div class="eleccion">
+                        <h3><span style="color: #23447A;">
+                            Potencia tus conocimientos</span> en el Centro Especializado
+                            en Investigación y Servicios Ambientales <span 
+                            style="color:  #23447A;">CEISAMB</span>
+                        </h3>
+                        <div class="fila">
+                        <div class="cuadro">
+                            <i class="fa-solid fa-clock"></i>
+                            <h5>Avanza a tu ritmo
+                            </h5>
+                            <p>Flexibilidad total para aprender en cualquier momento
+                                y desde cualquier lugar, sin restricciones de horarios
+                                y desde cualquier dispositivo con conexión a internet
+                            </p>
+                        </div>
+                        <div class="cuadro">
+                            <i class="fa-solid fa-person-chalkboard"></i>
+                            <h5>Apoyo académico personalizado</h5>
+                            <p>Proporcionamos un apoyo completo en el ámbito académico, 
+                                abarcando diferentes aspectos como tutorías, recursos 
+                                educativos y asesoramiento</p>
+                        </div>
+                        </div>
+                        <div class="fila">
+                        <div class="cuadro">
+                            <i class="fa-solid fa-rotate-right"></i>
+                            <h5>Actualización constante</h5>
+                            <p>Actualizamos constantemente el contenido academico,
+                                para ofrecerte la mejor experiencia de aprendizaje
+                            </p>
+                        </div>
+                        <div class="cuadro">
+                            <i class="fa-sharp fa-solid fa-people-group"></i>
+                            <h5>Profesionales con amplia experiencia</h5>
+                            <p>Profesionales dedicados a proporcionarte 
+                                conocimientos sólidos y prácticos, respaldados por años 
+                                de experiencia en el campo</p>
+                        </div>
+                        </div>
+                        <div class="fila">
+                        <div class="cuadro">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                            <h5>Descuentos</h5>			
+                            <p>Nuestros ex estudiantes cuentan con descuentos exclusivos
+                                para cursos, diplomados y talleres brindados por CEISAMB,
+                                así mismo, estudiantes que hayan aprobado satisfactoriamente
+                                nuestras capacitaciones
+                            </p>
+                        </div>
+                        <div class="cuadro">
+                            <i class="fa-solid fa-award"></i>
+                            <h5>Certificación</h5>
+                            <p>Obtén tu certificado al finalizar el curso y valida 
+                                tus competencias con nuestra acreditación</p>
+                        </div>
+                        </div>
+                    </div>
+                                
+                </section>
+            
+            
+                <section>
+                    <div class="sigue">
+                        <div class="titulo-sigue">
+                            <h3>
+                                <span style="color:  #23447A;">¡Se el 
+                                primero</span> y enterate de nuestras
+                                <span style="color:  #23447A;">
+                                ofertas exclusivas!</span>
+                            </h3>
+                        </div>
+                        <nav class="siguenos">
+                            <a href="https://www.youtube.com/channel/UC42MArYP5S8VAWE0C8TVyWA" class="whatsapp">
+                                <i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.tiktok.com/@cesiamb.servicios?lang=es" class="tiktok">
+                                <i class="fa-brands fa-tiktok"></i></a>
+                            <a href="https://www.instagram.com/cesiamb.servicios/" class="instagram">
+                                <i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61557426206421&sk=about" class="facebook">
+                                <i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.linkedin.com/in/centro-especializado-en-investigaci%C3%B3n-y-servicios-ambientales-cesiamb-1164392ba/" class="linkedin">
+                                <i class="fa-brands fa-linkedin"></i></a>
+                        </nav>	
+                    </div>
+                </section>
+            
+            
+            
+            
+                <footer>
+                    <div class="footer-column">
+                        <img src="images/logo.png" alt="">
+                        <p>Empresa innovadora que tiene como finalidad 
+                            brindar servicios especializadas en Gestión 
+                            Ambiental, Seguridad y Salud Ocupacional, 
+                            Sistemas Integrados de Gestión y Geomática 
+                            Ambiental</p>
+                    </div>
+                    <div class="footer-column">
+                        <h6>Menú</h6>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="nosotros.html">Nosotros</a></li>
+                            <li><a href="cursos.html">Cursos</a></li>
+                            <li><a href="nuestros_servicios.html">Servicios</a></li>
+                            <li><a href="recursos.html">Recursos</a></li>
+                            <li><a href="iniciar_sesion.html">Aula Virtual</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h6>Contacto</h6>
+                        <p>Dirección: Av. Paul Poblet Lind Mz. 42 Lt. 6, Pachacamac, Perú</p>
+                        <p>Teléfono: +51 936 879 768 / +51
+                            937 361 749
+                        </p>
+                        <p>Correo electrónico: serviciosceisamb@gmail.com</p>
+                    </div>
+            
+                </footer>
+            
+            
+                <div class="copyright">
+                    <p>Copyright 2024 © 2024 CEISAMB. Todos los derechos reservados.</p>
+                </div>
+            
+                <a href="https://api.whatsapp.com/send?phone=51936879768" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            
+
+
+    </body>
+      
+
+</html>

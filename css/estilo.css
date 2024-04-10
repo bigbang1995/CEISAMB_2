@@ -1,0 +1,1174 @@
+
+/* BARRA DE MENU Y ENCABEZADO */
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Russo+One&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #fff;
+}
+
+.logo {
+    max-width: 12rem;
+    opacity: 0; /* Inicialmente ocultamos los enlaces */
+    animation: aparecer 3s forwards; /* Agregamos la animación de aparición */
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: transform 0.5s ease; /* Aumentamos la duración de la transición y suavizamos el movimiento */
+    opacity: 0; /* Inicialmente ocultamos los enlaces */
+    animation: aparecer 3s forwards; /* Agregamos la animación de aparición */
+    font-family: "Montserrat", sans-serif;
+}
+
+.nav-list li:hover {
+    transform: scale(1.2); /* Agrandamos el enlace al pasar el cursor */
+    color: #37944b;
+}
+
+.nav-list li a:hover {
+    color: #37944b;
+}
+
+
+
+@keyframes aparecer {
+    from {
+        opacity: 0; /* Desde la opacidad 0 */
+    }
+    to {
+        opacity: 1; /* Hasta la opacidad 1 */
+    }
+}
+
+
+
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+}
+
+@media screen and (max-width: 845px) {
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+        border: 0;
+        font-size: 1.5em;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .abrir-menu {
+        color: #1c1c1c;
+    }
+
+    .cerrar-menu {
+        color: #ececec;
+    }
+
+    .nav {
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #0C6A51;
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+        font-size: 1.1em;
+        font-family: "Montserrat", sans-serif;
+        z-index: 1;
+        height: 100em;
+    }
+
+    .nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .nav-list li a {
+        color: #ecececec;
+    }
+    
+    .nav-list li a:hover {
+        color: #ecececec;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Russo+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #fff;
+}
+
+.logo {
+    max-width: 12rem;
+    opacity: 0; /* Inicialmente ocultamos los enlaces */
+    animation: aparecer 3s forwards; /* Agregamos la animación de aparición */
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+    position: relative; /* Cambiar la posición a relativa */
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: transform 0.5s ease; /* Aumentamos la duración de la transición y suavizamos el movimiento */
+    opacity: 0; /* Inicialmente ocultamos los enlaces */
+    animation: aparecer 3s forwards; /* Agregamos la animación de aparición */
+    font-family: "Montserrat", sans-serif;
+}
+
+.nav-list li:hover {
+    transform: scale(1.2); /* Agrandamos el enlace al pasar el cursor */
+    color: #37944b;
+}
+
+.subtema {
+    display: none; /* Ocultar el submenú por defecto */
+    position: absolute;
+    top: 100%; /* Colocar el submenú justo debajo del elemento padre */
+    left: 0;
+    background-color: #fff; /* Color de fondo del submenú */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Sombra */
+    z-index: 999; /* Asegurar que el submenú esté por encima de otros elementos */
+}
+
+.nav-list li:hover .subtema {
+    display: block; /* Mostrar el submenú cuando el elemento padre es hover */
+    position: absolute; /* Cambiar la posición a absoluta */
+    top: 100%; /* Colocar el submenú justo debajo del elemento padre */
+    left: 0;
+    width: 100%; /* Ajustar el ancho al 100% */
+}
+
+.nav-list li a:hover {
+    color: #37944b;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0; /* Desde la opacidad 0 */
+    }
+    to {
+        opacity: 1; /* Hasta la opacidad 1 */
+    }
+}
+
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+}
+
+@media screen and (max-width: 845px) {
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+        border: 0;
+        font-size: 1.5em;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .abrir-menu {
+        color: #1c1c1c;
+    }
+
+    .cerrar-menu {
+        color: #ececec;
+    }
+
+    .nav {
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #0C6A51;
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+        font-size: 1.1em;
+        font-family: "Montserrat", sans-serif;
+        z-index: 1;
+        height: 100em;
+    }
+
+    .nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .nav-list li a {
+        color: #ecececec;
+    }
+    
+    .nav-list li a:hover {
+        color: #ecececec;
+    }
+}
+
+/* BARRA DE MENU Y ENCABEZADO */
+
+
+/* SECCIÓN SLIDER */
+
+.slider_caja{
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 36em;
+    margin-top: 0px;
+}
+   
+.slider{
+    width: 100%;
+    height: 0;
+    justify-content: space-evenly;
+    z-index: 0;
+}
+
+#particles-js {
+	height: 36em; 
+	width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.slider ul{
+    display: flex;
+    width: 500%;
+    height: 9em;
+    padding: 0;
+    animation: cambio 30s infinite ease-in-out;
+}
+
+.slider li{
+    width: 100%;
+    height: 400%;
+    list-style: none;
+    position: relative;  
+}
+
+.slider img{
+    width: 100%;
+    height: 100%;
+}
+
+.slider li::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ancho igual al contenedor de la imagen */
+    height: 100%; /* Altura igual al contenedor de la imagen */
+    background-color: rgb(47, 47, 47,0.5);/* Color negro con transparencia */
+}
+
+.texto_0{
+    position: absolute;
+    transition: 400ms ease-in-out;
+    top: 50%;
+    bottom: 0%;
+    width: 100%;
+    height: 30em;
+    left: 50%;
+    color: #ffffff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transform: translateX(-50%) translateY(-60%);
+    text-align: left;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+}
+
+.texto_0 h2{
+    display: flex;
+    padding-top: 4em;
+    padding-bottom: 0vh;
+    padding-left: 0.6em;
+    padding-right: 2em;
+    font-size: 3.5vw;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    animation: aparecer 4s forwards; /* Animación para que el texto aparezca */
+    align-items: center;
+}
+
+
+.texto_0 p{
+    display: flex;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 2.5vw;
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    background-size: cover;
+    animation: aparecer 4s forwards; /* Animación para que el texto aparezca */
+    justify-content: center;
+    align-items: center;
+}
+
+
+.texto{
+    position: absolute;
+    transition: 400ms ease-in-out;
+    top: 50%;
+    bottom: 0%;
+    width: 100%;
+    height: 30em;
+    left: 50%;
+    color: #ffffff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transform: translateX(-50%) translateY(-60%);
+    text-align: left;
+    padding-top: 0px;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+}
+
+.texto h2{
+    display: flex;
+    padding-top: 5em;
+    padding-bottom: 0vh;
+    padding-left: 0.6em;
+    padding-right: 2em;
+    font-size: 3.5vw;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    animation: aparecer 4s forwards; /* Animación para que el texto aparezca */
+    align-items: center;
+
+}
+
+.texto p{
+    display: flex;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 2.5vw;
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    background-size: cover;
+    animation: aparecer 4s forwards; /* Animación para que el texto aparezca */
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media screen and (max-width: 900px) {
+    .texto{
+        top: 60%;
+    }
+    .texto_0{
+        top: 60%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .texto h2 {
+        font-size: 5vw;
+    }
+    .texto p {
+        font-size: 3.5vw;
+    }
+    .texto{
+        top: ;
+    }
+    .texto_0 h2{
+        font-size: 5vw;
+    }
+    .texto_0 p{
+        font-size: 3.5vw;
+    }
+    .texto_0{
+        top:;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .texto h2 {
+        font-size: 7vw;
+    }
+    .texto p {
+        font-size: 4vw;
+    }
+    .texto{
+        top: 55%;
+    }
+    .texto_0 h2{
+        font-size: 7vw;
+    }
+    .texto_0 p{
+        font-size: 4vw;
+    }
+    .texto_0{
+        top: 48%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .texto{
+        top: 65%;
+    }
+    .texto_0{
+        top: 59%;
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0; /* Comienza completamente transparente */
+    }
+    to {
+        opacity: 1; /* Termina completamente opaco */
+    }
+}
+
+@keyframes cambio{
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+
+    25%{margin-left: -100%;}
+    40%{margin-left: -100%;}
+
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+}
+/* SECCIÓN SLIDER */
+
+
+/* SECCION DE SERVICIOS */
+
+.servicios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 2em;
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px; /* Ajusta el ancho máximo según sea necesario */
+    margin: 0px; /* Centra horizontalmente */
+}
+
+.contenedor a {
+    width: calc(50% - 100px); /* Ancho del 50% menos el margen */
+    margin: 0px 100px 0px 0px;
+    text-decoration: none;
+    color: #000;
+    height: 27em;
+    text-align: center; /* Centra el texto horizontalmente */
+    display: flex; /* Activa el modelo de caja flexible */
+    flex-direction: column; /* Alinea los elementos en columna */
+    justify-content: center; /* Centra verticalmente el contenido */
+    line-height: 1em; /* Centra verticalmente el texto */
+}
+
+
+.contenedor figure {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.contenedor figure img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.capa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    width: 100%;
+    height: 100%;
+}
+
+.capa:hover {
+    opacity: 1;
+}
+
+.capa h4,
+.capa p {
+    margin: 0;
+}
+
+.servicios h3{
+    text-transform: uppercase ;
+    align-items: center;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 1000;
+    font-size: 3.5vw;
+    padding: 40px 10px 40px 20px;
+    color: #37944b;
+    animation: aparecerDesdeDerecha 3s ease-in-out forwards;
+}
+
+
+.contenedor figure{
+    position:relative;
+    height: 26em;
+    cursor: pointer;
+    width: 27.5em;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.contenedor figure img{
+    width: 100%;
+    height: 100%;
+    transition: all 400ms ease-out;
+    will-change: transform;
+}
+
+.contenedor figure .capa {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(5, 99, 22, 0.7);
+    transition: all 400ms ease-out;
+    opacity: 0; /* Cambiado de 0 a 0.9 */
+    text-align: center; /* Centra el texto horizontalmente */
+    display: flex; /* Activa el modelo de caja flexible */
+    flex-direction: column; /* Alinea los elementos en columna */
+    justify-content: center; /* Centra verticalmente el contenido */
+}
+
+
+.contenedor figure:hover > .capa {
+    opacity: 1;
+    visibility: visible;
+}
+
+.contenedor figure:hover > .capa h4{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.8em;
+
+}
+
+.contenedor figure:hover > img{
+    transform: scale(1.3);
+}
+
+.contenedor figure .capa h4{
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 120px;
+    transition: all 400ms ease-out;
+     margin-top: 0px;
+     line-height: 1em;
+}
+
+.contenedor figure .capa p{
+    color: #fff;
+    font-size: 1.1em;
+    line-height: 1.4;
+    width: 100%;
+    max-width: 372px;
+    margin: 10px 0px 0px 10px;
+}
+
+
+@media screen and (max-width: 700px) {
+    .servicios h3 {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .servicios h3 {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .servicios h3 {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .contenedor {
+        flex-direction: column; /* Cambiar a dirección de columna */
+        align-items: center; /* Centrar verticalmente */
+    }
+
+    .contenedor a {
+        width: 100%; /* Ancho del 100% para ocupar toda la columna */
+        margin: 10px 0; /* Ajustar el margen vertical */
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contenedor a {
+        width: calc(100% - 20px); /* Ancho del 100% menos el margen */
+        margin: 5px; /* Reducir el margen */
+    }
+
+    .contenedor figure {
+        width: 350px; /* Reducir el ancho de las figuras */
+    }
+
+    .contenedor figure .capa h4 {
+        font-size: 14px; /* Reducir el tamaño del texto */
+    }
+
+    .contenedor figure .capa p {
+        font-size: 12px; /* Reducir el tamaño del texto */
+    }
+
+    .contenedor figure .capa p{
+        margin: 10px 0px 0px 0px;
+    }
+}
+
+@media screen and (max-width: 385px) {
+    .contenedor a {
+        width: calc(100% - 20px); /* Ancho del 100% menos el margen */
+        margin: 5px; /* Reducir el margen */
+    }
+
+    .contenedor figure {
+        width: 270px; /* Reducir el ancho de las figuras */
+    }
+
+    .contenedor figure .capa h4 {
+        font-size: 14px; /* Reducir el tamaño del texto */
+    }
+
+    .contenedor figure .capa p {
+        font-size: 12px; /* Reducir el tamaño del texto */
+    }
+
+    .contenedor figure .capa p{
+        margin: 10px 0px 0px 0px;
+    }
+}
+
+
+/* SECCION DE SERVICIOS */
+
+
+
+
+/* SECCIÓN PORQUE ELEGIRNOS */
+
+/* Estilos para la clase "eleccion" */
+.eleccion {
+    display: flex;
+    vertical-align: top;
+    flex-wrap: wrap; /* Permite que las filas se envuelvan en varias líneas */
+    justify-content: space-between; /* Distribuye uniformemente las filas */
+    align-items: center; /* Centra verticalmente */
+    height: 100%; /* Establece el alto del contenedor al 100% del viewport */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-color: #e8e8e8;
+  }
+  
+  .fila {
+    display: flex;
+    justify-content: space-around; /* Distribuye uniformemente las columnas */
+    width: 100%; /* Ancho completo */
+    box-sizing: border-box;
+  }
+  
+  .cuadro {
+    width: 45%; /* Ancho de cada cuadro */
+    display: inline-block;
+    padding: 5px;
+    margin-bottom: 20px;
+    animation: aparecer 5s forwards; /* Animación para que el texto aparezca */
+
+  }
+  
+  h5{
+    text-align: left; /* Centra el texto dentro del cuadro */
+    font-family: "Montserrat", sans-serif;
+    font-size: 1em;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 900;
+    margin: 10px;
+    color: #333;
+  }
+
+@media screen and (max-width: 380px) {
+    h5 {
+        font-size: 0.8em; /* Tamaño de fuente para pantallas más pequeñas */
+    }
+}
+
+@media screen and (max-width: 312px) {
+    h5 {
+        font-size: 0.6em; /* Tamaño de fuente para pantallas más pequeñas */
+    }
+}
+  
+  .cuadro p{
+    text-align: left; /* Centra el texto dentro del cuadro */
+    font-family: "Montserrat", sans-serif;
+    font-size: em;
+    position: relative;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    color: #333;
+  }
+
+  @media screen and (max-width: 380px) {
+    .cuadro p {
+        font-size: 0.7em; /* Tamaño de fuente para pantallas más pequeñas */
+    }
+}
+
+.cuadro i{
+    display: flex;
+    font-size: 8vh;
+    color:  rgb(27, 155, 4);
+    justify-content: center;
+    animation: aparecer 7s forwards; /* Animación para que el texto aparezca */
+
+}
+
+.ele h3{
+    text-transform: uppercase ;
+    align-items: center;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 1000;
+    font-size: 3.5vw;
+    padding: 40px 10px 40px 20px;
+    color: #37944b;
+    animation: aparecerDesdeDerecha 3s ease-in-out forwards;
+}
+
+@media screen and (max-width: 700px) {
+    .ele h3 {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .ele h3 {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .ele h3 {
+        font-size: 5vw;
+    }
+}
+
+/* SECCIÓN PORQUE ELEGIRNOS */
+
+
+/* REDES SOCIALES */
+
+.sigue{
+    height: 70%;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: rgb(255, 255, 255);
+}
+
+.titulo-sigue h3{
+    text-transform: uppercase ;
+    align-items: center;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 1000;
+    font-size: 3.5vw;
+    color: #37944b;
+}
+
+@media screen and (max-width: 700px) {
+    .titulo-sigue h3 {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .titulo-sigue h3 {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .titulo-sigue h3 {
+        font-size: 6vw;
+    }
+}
+
+.siguenos{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    justify-content: space-between; 
+    padding-left: 7vh;
+    padding-right: 7vh;
+    padding-bottom: 50px;
+  
+}
+
+.sigue i {
+    font-size: 4vw;
+    transition: .1s ease;
+    display: inline-block;
+}
+
+@media screen and (max-width: 700px) {
+    .sigue i {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .sigue i {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .sigue i {
+        font-size: 6vw;
+    }
+}
+
+
+
+.siguenos a{
+    padding: 12px;
+    color: #000000;
+}
+
+.sigue .whatsapp:hover{
+    background-color: #25D366;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    border-radius: 50%;
+    transition: .3s ease;
+}
+
+.sigue .tiktok:hover{
+        background-color: rgb(0, 0, 0);
+        text-align: center;
+        font-size: 20px;
+        color: rgb(242, 242, 242);
+        border-radius: 50%;
+        padding: 10px 10px 10px 10px;
+        transition: .3s ease;
+    
+}
+    
+.sigue  .instagram:hover{
+        background-color: rgb(242, 9, 176);
+        text-align: center;
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        border-radius: 50%;
+        padding: 10px 10px 10px 10px;
+        transition: .3s ease;
+ }
+    
+.sigue .facebook:hover{
+        background-color: #3b5998;
+        text-align: center;
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        border-radius: 50%;
+        padding: 10px 15px 10px 15px;
+        transition: .3s ease;
+ }
+    
+.sigue  .linkedin:hover{
+        background-color: #0e76a8;
+        text-align: center;
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        border-radius: 50%;
+        padding: 10px 10px 10px 10px;
+        transition: .3s ease;
+ }
+
+/* REDES SOCIALES */
+
+
+
+ /* PIE DE PAGINA */
+
+ /* Estilos generales del footer */
+ 
+ footer {
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #37944b;
+}
+
+.footer-container {
+    max-width: 1200px; /* Ancho máximo del contenido del footer */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+}
+
+.footer-column {
+    width: 30%;
+    border-right: 1px solid #fff;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.footer-column:last-child {
+    border-right: none;
+}
+
+.footer-column h6 {
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.2vw;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+.footer-column img{
+    width: 80%;
+    height: 30%;
+    display: block;
+    margin: 15px auto
+}
+
+.footer-column p{
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    text-align: center;
+    font-size: 1.2vw;
+}
+
+.footer-column a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2vw;
+}
+
+.footer-column a:hover{
+    transition: .3s;
+    font-size: 18px;
+}
+    
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 700px) {
+    .footer-column p{
+        font-size: 2.5vw;
+    }
+    .footer-column a{
+        font-size: 2.5vw;
+    }
+    .footer-column h6{
+        font-size: 3.5vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .footer-column p {
+        font-size: 3vw;
+    }
+    .footer-column a{
+        font-size: 3vw;
+    }
+    .footer-column h6{
+        font-size: 4.5vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .footer-column p{
+        font-size: 3.5vw;
+    }
+    .footer-column a{
+        font-size: 3.5vw;
+    }
+    .footer-column h6{
+        font-size: 4.5vw;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    footer {
+        flex-direction: column;
+    }
+
+    .footer-container {
+        width: 100%;
+    }
+
+    .footer-column {
+        width: 100%;
+        border-right: none;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+ /* PIE DE PAGINA */
+
+
+ /* COPYRIGHT */
+.copyright{
+    display: inline-block;
+    background-color: #37944b;
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    border-top: 2px solid #f5f3f3; /* Define una línea sólida de color gris claro */
+    padding-top: 10px; /* Ajusta el espacio superior para separar la línea del texto */
+ }
+
+.copyright p{
+    text-align: center;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2vw;
+}
+
+@media screen and (max-width: 700px) {
+    .copyright p {
+        font-size: 2.2vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .copyright p {
+        font-size: 2.9vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .copyright p {
+        font-size: 2.9vw;
+    }
+}
+ /* COPYRIGHT */
+ 
+
+
+  /* CHAT WHATSAAP */
+ .whatsapp-btn {
+    position: fixed;
+    bottom: 100px; /* Ajusta la posición vertical según sea necesario */
+    right: 20px; /* Ajusta la posición horizontal según sea necesario */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    background-color: #25d366; /* Color de fondo de WhatsApp */
+    color: #fff; /* Color del icono */
+    width: 60px; /* Ajusta el tamaño del botón según sea necesario */
+    height: 60px;
+    border-radius: 50%; /* Para que el botón sea circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Añade sombra al botón */
+    transition: all 0.3s ease; /* Transición suave */
+    font-size: 3em;
+    text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.3); /* Efecto de agrandamiento al pasar el mouse */
+}
+

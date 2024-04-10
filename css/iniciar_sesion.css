@@ -1,0 +1,703 @@
+
+/* BARRA DE MENU Y ENCABEZADO */
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Russo+One&display=swap');
+
+
+:root {
+    --color_primario: #FFFFFF;
+    --color_primario_suave: #FFFFFF;
+    --color_blanco: #FFFFFF;
+    --altura_header: 80px;
+    --padding_left_right: 2rem;
+    --ancho_maximo: 1200px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+}
+
+.navbar a{
+    color: #333;
+    font-size: 1.15vw;
+    transition: color 0.2s ease, font-size 2s ease; /* Transición para el color del texto y el tamaño de la fuente */
+    border-bottom: 3px solid transparent; /* Línea transparente inicial */
+    transition: border-bottom 0.5s ease; /* Transición suave */
+    text-transform: uppercase;
+    border-bottom: 0.1px solid transparent; /* Línea transparente inicial */
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 900px) {
+    .navbar a {
+        font-size: 1.2em;
+    }
+}
+
+
+.navbar a:hover {
+    color: #25b320; /* Cambiar el color del texto al pasar el cursor sobre el enlace */
+    font-size: 1.3em; /* Aumentar el tamaño de la fuente al pasar el cursor sobre el enlace */
+    border-bottom: 3px solid #25b320; /* Línea negra al pasar el cursor */
+    font-weight: bold;
+}
+
+
+ol,ul{
+    list-style: none;
+    z-index: 9999;
+}
+
+.header {
+    height: var(--altura_header);
+    background-color: var(--color_primario);
+    border: 1px solid rgb(255, 255, 255);
+    z-index: 999;
+}
+
+.navbar {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 var(--padding_left_right);
+}
+
+.menu_hamburguesa{
+    display: none;
+}
+
+.menu_hamburguesa:checked + .ul_links {
+    height: calc(100vh - var(--altura_header));
+}
+
+.labe_hamburguesa svg{
+    cursor: pointer;
+
+}
+
+.ul_links {
+    width: 100%;
+    background-color: var(--color_primario_suave);
+    position: absolute;
+    top: var(--altura_header);
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    /* height: calc(100vh - var(--altura_header)); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.link {
+    font-size: 3em;
+    color: var(--color_blanco);
+    font-weight: bold;
+}
+
+.navbar img{
+    max-width: 25vh; /* Establecemos el ancho máximo del logo */
+    height: 7vh; /* La altura se ajustará automáticamente para mantener la proporción */
+    margin-top: 0px;
+}
+
+@media screen and (max-width: 330px) {
+    .navbar img {
+        max-width: 20vh; /* Tamaño de fuente para pantallas más pequeñas */
+    }
+}
+
+
+@media (min-width: 910px){
+    .labe_hamburguesa {
+        display: none;
+    }
+    .ul_links{
+        position: static;
+        width: auto;
+        height: auto;
+        flex-direction: row;
+        gap: 2rem;
+    }
+    .link{
+        font-size: 1.2rem;
+        transition: all .3s;
+        padding: .2rem .7rem;
+    }
+}
+
+/* BARRA DE MENU Y ENCABEZADO */
+
+/* INICIAR SESION */
+
+.lc{
+    display: flex;
+    width: 100%;
+    height: 28em;
+    background: linear-gradient(to right, #448c34,#37944b, #0c6a51); /* Define el degradado lineal de izquierda a derecha */
+}
+
+.login-container {
+    height: 20em;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgb(0, 0, 0); /* Agrega sombra al contenedor */
+    background-color: white;
+}
+
+.login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #23447a;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1em;
+}
+
+.login h2{
+    font-family: "Montserrat", sans-serif;
+    color: #23447a;
+    font-weight: 900;
+    font-size: 1.6em;
+}
+
+
+.links a {
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    color: #333;
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: transform 0.3s ease;
+}
+
+.links:hover {
+    transform: scale(1.2); /* Escala el botón al 110% de su tamaño original al pasar el ratón por encima */
+}
+
+.login-form input,
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.login-form button {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: "Montserrat", sans-serif;
+}
+
+.login-form button:hover {
+    background-color: #23447a;
+    font-family: "Montserrat", sans-serif;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.rem{
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+    color: #333;
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+.remember input[type="checkbox"] {
+    width: 15px; /* Aumenta el tamaño del checkbox */
+    height: 17px;
+    cursor: pointer; 
+}
+
+.remember a {
+    text-decoration: none;
+    color: #23447a;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1em;
+}
+
+@media screen and (max-width: 530px){
+    .login h2{
+        font-size: 5vw;
+    }
+    .links a{
+        font-size: 3.8vw;
+    }
+    .remember a{
+        font-size: 3.5vw;
+    }
+    .rem{
+        font-size: 3.3vw;
+    }
+    .login-container{
+        max-width: 400px;
+    }
+}
+
+/* INICIAR SESION */
+
+
+/* SECCIÓN PORQUE ELEGIRNOS */
+
+/* Estilos para la clase "eleccion" */
+.eleccion {
+    display: flex;
+    vertical-align: top;
+    flex-wrap: wrap; /* Permite que las filas se envuelvan en varias líneas */
+    justify-content: space-between; /* Distribuye uniformemente las filas */
+    align-items: center; /* Centra verticalmente */
+    height: 100%; /* Establece el alto del contenedor al 100% del viewport */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-color: #e8e8e8;
+  }
+  
+  .fila {
+    display: flex;
+    justify-content: space-around; /* Distribuye uniformemente las columnas */
+    width: 100%; /* Ancho completo */
+    box-sizing: border-box;
+  }
+  
+  .cuadro {
+    width: 45%; /* Ancho de cada cuadro */
+    display: inline-block;
+    padding: 5px;
+    margin-bottom: 20px;
+    animation: aparecer 5s forwards; /* Animación para que el texto aparezca */
+
+  }
+  
+  h5{
+    text-align: left; /* Centra el texto dentro del cuadro */
+    font-family: "Montserrat", sans-serif;
+    font-size: 1em;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 900;
+    margin: 10px;
+    color: #333;
+  }
+
+@media screen and (max-width: 380px) {
+    h5 {
+        font-size: 0.8em; /* Tamaño de fuente para pantallas más pequeñas */
+    }
+}
+
+@media screen and (max-width: 312px) {
+    h5 {
+        font-size: 0.6em; /* Tamaño de fuente para pantallas más pequeñas */
+    }
+}
+  
+  .cuadro p{
+    text-align: left; /* Centra el texto dentro del cuadro */
+    font-family: "Montserrat", sans-serif;
+    font-size: em;
+    position: relative;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    color: #333;
+  }
+
+  @media screen and (max-width: 380px) {
+    .cuadro p {
+        font-size: 0.7em; /* Tamaño de fuente para pantallas más pequeñas */
+    }
+}
+
+.cuadro i{
+    display: flex;
+    font-size: 8vh;
+    color:  rgb(27, 155, 4);
+    justify-content: center;
+    animation: aparecer 7s forwards; /* Animación para que el texto aparezca */
+
+}
+
+.ele h3{
+    font-size: 3.5vw;
+    text-transform: uppercase ;
+    align-items: center;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 1000;
+    padding: 40px 30px 40px 30px;
+    color: #37944b;
+    animation: aparecerDesdeDerecha 3s ease-in-out forwards;
+}
+
+@media screen and (max-width: 700px) {
+    .ele h3 {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .ele h3 {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .ele h3 {
+        font-size: 5vw;
+    }
+}
+
+/* SECCIÓN PORQUE ELEGIRNOS */
+
+
+
+/* REDES SOCIALES */
+
+.sigue{
+    height: 70%;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: rgb(255, 255, 255);
+}
+
+.titulo-sigue h3{
+    text-transform: uppercase ;
+    align-items: center;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 1000;
+    font-size: 3.5vw;
+    color: #37944b;
+}
+
+@media screen and (max-width: 700px) {
+    .titulo-sigue h3 {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .titulo-sigue h3 {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .titulo-sigue h3 {
+        font-size: 6vw;
+    }
+}
+
+.siguenos{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    justify-content: space-between; 
+    padding-left: 7vh;
+    padding-right: 7vh;
+    padding-bottom: 50px;
+  
+}
+
+.sigue i {
+    font-size: 4vw;
+    transition: .1s ease;
+    display: inline-block;
+}
+
+@media screen and (max-width: 700px) {
+    .sigue i {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .sigue i {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .sigue i {
+        font-size: 6vw;
+    }
+}
+
+
+
+.siguenos a{
+    padding: 12px;
+    color: #000000;
+}
+
+.sigue .whatsapp:hover{
+    background-color: #25D366;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    border-radius: 50%;
+    transition: .3s ease;
+}
+
+.sigue .tiktok:hover{
+        background-color: rgb(0, 0, 0);
+        text-align: center;
+        font-size: 20px;
+        color: rgb(242, 242, 242);
+        border-radius: 50%;
+        padding: 10px 10px 10px 10px;
+        transition: .3s ease;
+    
+}
+    
+.sigue  .instagram:hover{
+        background-color: rgb(242, 9, 176);
+        text-align: center;
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        border-radius: 50%;
+        padding: 10px 10px 10px 10px;
+        transition: .3s ease;
+ }
+    
+.sigue .facebook:hover{
+        background-color: #3b5998;
+        text-align: center;
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        border-radius: 50%;
+        padding: 10px 15px 10px 15px;
+        transition: .3s ease;
+ }
+    
+.sigue  .linkedin:hover{
+        background-color: #0e76a8;
+        text-align: center;
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        border-radius: 50%;
+        padding: 10px 10px 10px 10px;
+        transition: .3s ease;
+ }
+
+/* REDES SOCIALES */
+
+
+
+
+ /* PIE DE PAGINA */
+
+ /* Estilos generales del footer */
+ 
+footer {
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #37944b;
+}
+
+.footer-container {
+    max-width: 1200px; /* Ancho máximo del contenido del footer */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+}
+
+.footer-column {
+    width: 30%;
+    border-right: 1px solid #fff;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.footer-column:last-child {
+    border-right: none;
+}
+
+.footer-column h6 {
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.2vw;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+.footer-column img{
+    width: 80%;
+    height: 30%;
+    display: block;
+    margin: 15px auto
+}
+
+.footer-column p{
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    text-align: center;
+    font-size: 1.2vw;
+}
+
+.footer-column a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2vw;
+}
+
+.footer-column a:hover{
+    transition: .3s;
+    font-size: 18px;
+}
+    
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 700px) {
+    .footer-column p{
+        font-size: 2.5vw;
+    }
+    .footer-column a{
+        font-size: 2.5vw;
+    }
+    .footer-column h6{
+        font-size: 3.5vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .footer-column p {
+        font-size: 3vw;
+    }
+    .footer-column a{
+        font-size: 3vw;
+    }
+    .footer-column h6{
+        font-size: 4.5vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .footer-column p{
+        font-size: 3.5vw;
+    }
+    .footer-column a{
+        font-size: 3.5vw;
+    }
+    .footer-column h6{
+        font-size: 4.5vw;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    footer {
+        flex-direction: column;
+    }
+
+    .footer-container {
+        width: 100%;
+    }
+
+    .footer-column {
+        width: 100%;
+        border-right: none;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+ /* PIE DE PAGINA */
+
+
+ /* COPYRIGHT */
+.copyright{
+    display: inline-block;
+    background-color: #37944b;
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    border-top: 2px solid #f5f3f3; /* Define una línea sólida de color gris claro */
+    padding-top: 10px; /* Ajusta el espacio superior para separar la línea del texto */
+ }
+
+.copyright p{
+    text-align: center;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2vw;
+}
+
+@media screen and (max-width: 700px) {
+    .copyright p {
+        font-size: 2.2vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .copyright p {
+        font-size: 2.9vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .copyright p {
+        font-size: 2.9vw;
+    }
+}
+ /* COPYRIGHT */
+ 
+
+
+  /* CHAT WHATSAAP */
+ .whatsapp-btn {
+    position: fixed;
+    bottom: 100px; /* Ajusta la posición vertical según sea necesario */
+    right: 20px; /* Ajusta la posición horizontal según sea necesario */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    background-color: #25d366; /* Color de fondo de WhatsApp */
+    color: #fff; /* Color del icono */
+    width: 60px; /* Ajusta el tamaño del botón según sea necesario */
+    height: 60px;
+    border-radius: 50%; /* Para que el botón sea circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Añade sombra al botón */
+    transition: all 0.3s ease; /* Transición suave */
+    font-size: 3em;
+    text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.3); /* Efecto de agrandamiento al pasar el mouse */
+}
+
